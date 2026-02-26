@@ -27,6 +27,25 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->sidebarCollapsibleOnDesktop()
+            ->renderHook(
+                \Filament\View\PanelsRenderHook::HEAD_END,
+                fn (): string => '<style>
+                    aside.fi-sidebar { background-color: #f8fafc; border-right: 1px solid #e2e8f0; }
+                    .dark aside.fi-sidebar { background-color: #0f172a; border-right: 1px solid #1e293b; }
+                    
+                    @media (max-width: 768px) {
+                        aside.fi-sidebar { max-width: 240px !important; }
+                    }
+                    
+                    .fi-form-actions, 
+                    .fi-page-actions, 
+                    .fi-modal-footer-actions,
+                    .fi-ac { 
+                        justify-content: flex-end !important; 
+                    }
+                </style>'
+            )
             ->colors([
                 'primary' => Color::Amber,
             ])
