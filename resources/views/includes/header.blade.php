@@ -7,7 +7,7 @@
     <!-- LOGO -->
     <div class="usa-header-logo">
       <a href="{{ url('/') }}">
-        <img src="{{ asset('assets/images/logo-university-of-south.png') }}"
+        <img src="{{ asset('logo-university-of-south.png') }}"
              alt="South Asia University Bangladesh">
       </a>
     </div>

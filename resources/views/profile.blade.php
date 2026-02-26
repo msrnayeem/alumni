@@ -18,7 +18,7 @@
  
 <div class="profile-container">
   <div class="profile-header">
-    <img src="assets/images/8e888cc7295ac727.jpeg" alt="Student Photo">
+    <img src="{{ asset('profile.jpeg') }}" alt="Student Photo">
     <div>
       <h2>MD EZAZ AHMMED</h2>
       <div>
@@ -127,7 +127,7 @@
   
       <div class="profile-section">
       <div class="section-title">SIGNATURE</div>
-      <img src="assets/images/3c63a9c784231990.jpeg" alt="Signature" style="max-width:220px; display:block;">
+      <img src="{{ asset('signature.jpeg') }}" alt="Signature" style="max-width:220px; display:block;">
     </div>
   </div>
 

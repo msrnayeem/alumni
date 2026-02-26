@@ -7,7 +7,7 @@
       <!-- LEFT: logo + contact -->
       <div class="sa-footer-left">
         <div class="sa-footer-logo">
-          <img src="{{ asset('assets/images/logo-university-of-south.png') }}"
+          <img src="{{ asset('logo-university-of-south.png') }}"
                alt="University of South Asia">
         </div>
 
