@@ -18,11 +18,11 @@
  
 <div class="profile-container">
   <div class="profile-header">
-    <img src="{{ asset('profile.jpeg') }}" alt="Student Photo">
+    <img src="{{ auth()->user()->profile_photo_path ? asset('storage/' . auth()->user()->profile_photo_path) : asset('profile.jpeg') }}" alt="Student Photo">
     <div>
-      <h2>MD EZAZ AHMMED</h2>
+      <h2>{{ strtoupper(auth()->user()->name) }}</h2>
       <div>
-        BACHELOR OF BUSINESS ADMINISTRATION (BBA) | ID: 1814793124      </div>
+        {{ strtoupper(auth()->user()->program) }} | ID: {{ auth()->user()->student_id }}      </div>
     </div>
   </div>
 
@@ -31,34 +31,34 @@
       <div class="info-grid">
                   <div class="info-item">
             <strong>REGISTRATION NUMBER:</strong>
-            33745724          </div>
+            {{ strtoupper(auth()->user()->registration_number ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>PROGRAM:</strong>
-            BACHELOR OF BUSINESS ADMINISTRATION (BBA)          </div>
+            {{ strtoupper(auth()->user()->program ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>MAJOR 1:</strong>
-            ACCOUNTING INFORMATION SYSTEM          </div>
+            {{ strtoupper(auth()->user()->major_1 ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>ENROLMENT SEMESTER:</strong>
-            SPRING 2019          </div>
+            {{ strtoupper(auth()->user()->enrolment_semester ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>PASSING YEAR:</strong>
-            SPRING 2023          </div>
+            {{ strtoupper(auth()->user()->graduation_year ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>CREDIT COMPLETED:</strong>
-            126          </div>
+            {{ strtoupper(auth()->user()->credit_completed ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>CGPA:</strong>
-            3.50          </div>
+            {{ strtoupper(auth()->user()->cgpa ?? 'N/A') }}          </div>
                   <div class="info-item">
-            <strong>RESULT PUBLICATION&#039;S DATE:</strong>
-            21ST MARCH 2023          </div>
+            <strong>RESULT PUBLICATION'S DATE:</strong>
+            {{ strtoupper(auth()->user()->result_publication_date ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>CURRENT STATUS:</strong>
-            GRADUATED          </div>
+            {{ strtoupper(auth()->user()->current_status ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>CERTIFICATE SERIAL:</strong>
-            04322          </div>
+            {{ strtoupper(auth()->user()->certificate_serial ?? 'N/A') }}          </div>
               </div>
     </div>
   
@@ -67,37 +67,37 @@
       <div class="info-grid">
                   <div class="info-item">
             <strong>DATE OF BIRTH:</strong>
-            22ND JUNE 1998          </div>
+            {{ strtoupper(auth()->user()->date_of_birth ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>GENDER:</strong>
-            MALE          </div>
+            {{ strtoupper(auth()->user()->gender ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>BLOOD GROUP:</strong>
-            A+          </div>
+            {{ strtoupper(auth()->user()->blood_group ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>NATIONALITY:</strong>
-            BANGLADESHI          </div>
+            {{ strtoupper(auth()->user()->nationality ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>MARITAL STATUS:</strong>
-            UNMARRIED          </div>
+            {{ strtoupper(auth()->user()->marital_status ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>RELIGION:</strong>
-            ISLAM          </div>
+            {{ strtoupper(auth()->user()->religion ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>NID / PASSPORT NO:</strong>
-            6013435240          </div>
+            {{ strtoupper(auth()->user()->nid_passport_no ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>EMAIL:</strong>
-            EZAZ@SOUTHASIAUNI.AC.BD          </div>
+            {{ strtoupper(auth()->user()->email ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>MOBILE:</strong>
-            +8801610820531          </div>
+            {{ strtoupper(auth()->user()->mobile ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>PRESENT ADDRESS:</strong>
-            HOSENPUR, BHERAMARA, JOGOSHWAR-7040, KUSHTIA          </div>
+            {{ strtoupper(auth()->user()->present_address ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>PERMANENT ADDRESS:</strong>
-            HOSENPUR, BHERAMARA, JOGOSHWAR-7040, KUSHTIA          </div>
+            {{ strtoupper(auth()->user()->permanent_address ?? 'N/A') }}          </div>
               </div>
     </div>
   
@@ -105,29 +105,29 @@
       <div class="section-title">GUARDIAN INFORMATION</div>
       <div class="info-grid">
                   <div class="info-item">
-            <strong>FATHER&#039;S NAME:</strong>
-            MD REZAUL HAQUE          </div>
+            <strong>FATHER'S NAME:</strong>
+            {{ strtoupper(auth()->user()->father_name ?? 'N/A') }}          </div>
                   <div class="info-item">
-            <strong>FATHER&#039;S OCCUPATION:</strong>
-            FARMER          </div>
+            <strong>FATHER'S OCCUPATION:</strong>
+            {{ strtoupper(auth()->user()->father_occupation ?? 'N/A') }}          </div>
                   <div class="info-item">
-            <strong>MOTHER&#039;S NAME:</strong>
-            MST ROMELA KHATUN          </div>
+            <strong>MOTHER'S NAME:</strong>
+            {{ strtoupper(auth()->user()->mother_name ?? 'N/A') }}          </div>
                   <div class="info-item">
-            <strong>MOTHER&#039;S OCCUPATION:</strong>
-            HOUSE WIFE          </div>
+            <strong>MOTHER'S OCCUPATION:</strong>
+            {{ strtoupper(auth()->user()->mother_occupation ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>EMERGENCY CONTACT:</strong>
-            MD REZAUL HAQUE          </div>
+            {{ strtoupper(auth()->user()->emergency_contact ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>GUARDIAN CONTACT:</strong>
-            +8801610820531          </div>
+            {{ strtoupper(auth()->user()->guardian_contact ?? 'N/A') }}          </div>
               </div>
     </div>
-  
+
       <div class="profile-section">
       <div class="section-title">SIGNATURE</div>
-      <img src="{{ asset('signature.jpeg') }}" alt="Signature" style="max-width:220px; display:block;">
+      <img src="{{ auth()->user()->signature_photo_path ? asset('storage/' . auth()->user()->signature_photo_path) : asset('signature.jpeg') }}" alt="Signature" style="max-width:220px; display:block;">
     </div>
   </div>
 

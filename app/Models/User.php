@@ -7,15 +7,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
+
+class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $this->role === 'admin';
+    }
 
     /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
+     */
     protected $fillable = [
         'name',
         'email',
@@ -24,6 +33,35 @@ class User extends Authenticatable
         'graduation_year',
         'degree',
         'major',
+        'role',
+        'username',
+        'registration_number',
+        'program',
+        'major_1',
+        'enrolment_semester',
+        'credit_completed',
+        'cgpa',
+        'result_publication_date',
+        'current_status',
+        'certificate_serial',
+        'date_of_birth',
+        'gender',
+        'blood_group',
+        'nationality',
+        'marital_status',
+        'religion',
+        'nid_passport_no',
+        'mobile',
+        'present_address',
+        'permanent_address',
+        'father_name',
+        'father_occupation',
+        'mother_name',
+        'mother_occupation',
+        'emergency_contact',
+        'guardian_contact',
+        'profile_photo_path',
+        'signature_photo_path',
     ];
 
     /**

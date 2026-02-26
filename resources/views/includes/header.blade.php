@@ -64,14 +64,30 @@
   <nav class="usa-nav">
     <div class="usa-nav-inner">
 
-      <a href="{{ url('/') }}" class="usa-nav-link {{ request()->is('/') ? 'usa-nav-link-active' : '' }}">
+      <a href="{{ url('/') }}" class="usa-nav-link" style="background: transparent; border: none; border-bottom: 3px solid red; color: red; font-weight: 800; border-radius: 0; padding-bottom: 2px;">
         Home
       </a>
 
+      @guest
         <a href="{{ url('login') }}"
-           class="usa-nav-link {{ request()->is('login') ? 'usa-nav-link-active' : '' }}">
-          <i class="fa fa-user"></i> Graduate Login
+           class="usa-nav-link" style="background: transparent; border: none; border-bottom: 3px solid red; color: red; font-weight: 800; border-radius: 0; padding-bottom: 2px;">
+          <i class="fa fa-user" style="margin-right: 5px;"></i> Graduate Login
         </a>
+      @endguest
+
+      @auth
+        <a href="{{ url('profile') }}"
+           class="usa-nav-link" style="background: transparent; border: none; border-bottom: 3px solid red; color: red; font-weight: 800; border-radius: 0; padding-bottom: 2px; margin-right: 15px;">
+          <i class="fa fa-id-badge" style="margin-right: 5px;"></i> Profile
+        </a>
+        
+        <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+            @csrf
+            <button type="submit" class="usa-nav-link" style="background: transparent; border: none; border-bottom: 3px solid red; color: red; font-weight: 800; border-radius: 0; padding-bottom: 2px; cursor: pointer;">
+              <i class="fa-solid fa-arrow-right-from-bracket" style="margin-right: 5px;"></i> Logout
+            </button>
+        </form>
+      @endauth
       
     </div>
   </nav>

@@ -9,12 +9,24 @@
   </div>
 
   
-  <form method="post" action="" style="padding: 20px;">
+  <form method="post" action="{{ route('login') }}" style="padding: 20px;">
+    @csrf
+
+    @if ($errors->any())
+        <div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 15px; border-radius: 4px; border: 1px solid #f5c6cb;">
+            <ul style="margin: 0; padding-left: 20px;">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <table style="width: 100%; border-spacing: 0 12px;">
       <tr>
         <td style="width: 160px; font-weight: bold;">Username:</td>
         <td>
-          <input type="text" name="username" value="" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+          <input type="text" name="username" value="{{ old('username') }}" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
         </td>
       </tr>
       <tr>
