@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'asset_url' => null,
+    'asset_url' => env('APP_URL', null),
 
     'class_namespace' => 'App\\Livewire',
 
