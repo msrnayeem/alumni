@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -14,10 +16,23 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt(['username' => $credentials['username'], 'password' => $credentials['password'], 'role' => 'student'])) {
-            $request->session()->regenerate();
+        // Find the user by username
+        $user = User::where('username', $credentials['username'])->first();
 
-            return redirect()->intended('profile');
+        if ($user && Hash::check($credentials['password'], $user->password)) {
+            if ($user->role === 'admin') {
+                Auth::login($user);
+                $request->session()->regenerate();
+
+                return redirect('/admin');
+            }
+
+            if ($user->role === 'student') {
+                Auth::login($user);
+                $request->session()->regenerate();
+
+                return redirect()->intended('profile');
+            }
         }
 
         return back()->withErrors([
