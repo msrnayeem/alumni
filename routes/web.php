@@ -21,6 +21,10 @@ Route::middleware('auth')->group(function () {
     })->name('profile');
 });
 
+Route::get('/verify', function () {
+    return view('verify');
+})->name('verify');
+
 // Admin routes
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
