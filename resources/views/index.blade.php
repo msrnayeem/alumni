@@ -43,7 +43,7 @@
         <td style="font-weight: bold;">Date of Birth:</td>
         <td>
           <!-- Text field for datepicker -->
-          <input type="text" name="dob" id="dob" value="{{ old('dob') }}" placeholder="DD-MM-YYYY" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+          <input type="text" name="dob" id="dob" value="{{ old('dob') }}" placeholder="YYYY-MM-DD" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
         </td>
       </tr>
       <tr>
