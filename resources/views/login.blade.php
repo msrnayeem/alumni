@@ -34,7 +34,7 @@
       <tr>
         <td style="width: 160px; font-weight: bold;">Username:</td>
         <td>
-          <input type="text" name="username" value="{{ old('username') }}" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+          <input type="text" name="username" placeholder="Your Username" value="{{ old('username') }}" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
         </td>
       </tr>
       <tr>
