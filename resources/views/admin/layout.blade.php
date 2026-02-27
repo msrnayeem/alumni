@@ -212,6 +212,9 @@
         <a href="{{ route('admin.students.index') }}" class="{{ request()->routeIs('admin.students.*') ? 'active' : '' }}">
             &#x1F465; Students
         </a>
+        <a href="{{ route('admin.change-password') }}" class="{{ request()->routeIs('admin.change-password') ? 'active' : '' }}">
+            &#x1F512; Change Password
+        </a>
     </nav>
     <div class="sidebar-footer">
         Logged in as <strong>{{ Auth::user()->name }}</strong>

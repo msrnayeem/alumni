@@ -34,4 +34,6 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/students/{user}/edit', [AdminController::class, 'edit'])->name('students.edit');
     Route::put('/students/{user}', [AdminController::class, 'update'])->name('students.update');
     Route::delete('/students/{user}', [AdminController::class, 'destroy'])->name('students.destroy');
+    Route::get('/change-password', [AdminController::class, 'showChangePassword'])->name('change-password');
+    Route::post('/change-password', [AdminController::class, 'updatePassword'])->name('change-password.update');
 });

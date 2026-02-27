@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
@@ -182,5 +183,29 @@ class AdminController extends Controller
         $user->delete();
 
         return redirect()->route('admin.students.index')->with('success', 'Student deleted successfully.');
+    }
+
+    public function showChangePassword()
+    {
+        return view('admin.change-password');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'new_password'     => 'required|string|min:6|confirmed',
+        ]);
+
+        $admin = Auth::user();
+
+        if (!Hash::check($request->current_password, $admin->password)) {
+            return back()->withErrors(['current_password' => 'The current password is incorrect.'])->withInput();
+        }
+
+        $admin->password = Hash::make($request->new_password);
+        $admin->save();
+
+        return back()->with('success', 'Password changed successfully.');
     }
 }
