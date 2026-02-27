@@ -76,7 +76,6 @@
       @endguest
 
       @auth
-        
         <form action="{{ route('logout') }}" method="POST" style="display:inline;">
             @csrf
             <button type="submit" class="usa-nav-link" style="background: transparent; border: none; border-bottom: 3px solid red; color: red; font-weight: 800; border-radius: 0; padding-bottom: 2px; cursor: pointer;">
