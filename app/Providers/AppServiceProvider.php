@@ -15,14 +15,15 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        // Format a stored date (any parseable format) as "22ND JUNE 1998"
-        Blade::directive('formatDob', function ($expression) {
+        // Format a date (Carbon instance or any parseable string) as "22ND JUNE 1998"
+        Blade::directive('formatDate', function ($expression) {
             return "<?php
                 try {
-                    \$_d = Carbon\\Carbon::parse($expression);
+                    \$_val = $expression;
+                    \$_d = (\$_val instanceof \\Carbon\\Carbon) ? \$_val : \\Carbon\\Carbon::parse(\$_val);
                     echo strtoupper(\$_d->format('j') . date_suffix(\$_d->day) . ' ' . \$_d->format('F Y'));
                 } catch (\\Exception \$e) {
-                    echo strtoupper($expression ?? 'N/A');
+                    echo strtoupper((string)($expression ?? 'N/A'));
                 }
             ?>";
         });

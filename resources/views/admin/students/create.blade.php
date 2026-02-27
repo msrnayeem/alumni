@@ -77,7 +77,7 @@
             </div>
             <div class="form-group">
                 <label>Result Publication Date</label>
-                <input type="text" name="result_publication_date" value="{{ old('result_publication_date') }}">
+                <input type="date" name="result_publication_date" value="{{ old('result_publication_date') }}">
             </div>
             <div class="form-group">
                 <label>Current Status</label>
@@ -96,7 +96,7 @@
             <div class="form-section-title">Personal Info</div>
             <div class="form-group">
                 <label>Date of Birth</label>
-                <input type="text" name="date_of_birth" value="{{ old('date_of_birth') }}">
+                <input type="date" name="date_of_birth" value="{{ old('date_of_birth') }}">
             </div>
             <div class="form-group">
                 <label>Gender</label>

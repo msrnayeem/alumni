@@ -75,7 +75,7 @@
         <tr><td class="label">PASSING YEAR:</td><td>{{ strtoupper($student->graduation_year) }}</td></tr>
       @endif
       @if($student->result_publication_date)
-        <tr><td class="label">RESULT PUBLICATION'S DATE:</td><td>{{ strtoupper($student->result_publication_date) }}</td></tr>
+        <tr><td class="label">RESULT PUBLICATION'S DATE:</td><td>@formatDate($student->result_publication_date)</td></tr>
       @endif
       @if($student->credit_completed)
         <tr><td class="label">COMPLETED CREDIT:</td><td>{{ $student->credit_completed }}</td></tr>
@@ -99,7 +99,7 @@
         <tr><td class="label">ADDRESS:</td><td>{{ strtoupper($student->permanent_address) }}</td></tr>
       @endif
       @if($student->date_of_birth)
-        <tr><td class="label">DATE OF BIRTH:</td><td>@formatDob($student->date_of_birth)</td></tr>
+        <tr><td class="label">DATE OF BIRTH:</td><td>@formatDate($student->date_of_birth)</td></tr>
       @endif
     </table>
   </div>

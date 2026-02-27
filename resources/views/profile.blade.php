@@ -73,7 +73,7 @@
       <div class="info-grid">
                   <div class="info-item">
             <strong>DATE OF BIRTH:</strong>
-            @formatDob(auth()->user()->date_of_birth)          </div>
+            @formatDate(auth()->user()->date_of_birth)          </div>
                   <div class="info-item">
             <strong>GENDER:</strong>
             {{ strtoupper(auth()->user()->gender ?? 'N/A') }}          </div>
