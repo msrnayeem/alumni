@@ -58,7 +58,7 @@
             {{ strtoupper(auth()->user()->cgpa ?? 'N/A') }}          </div>
                   <div class="info-item">
             <strong>RESULT PUBLICATION'S DATE:</strong>
-            {{ strtoupper(auth()->user()->result_publication_date ?? 'N/A') }}          </div>
+            @formatDate(auth()->user()->result_publication_date)          </div>
                   <div class="info-item">
             <strong>CURRENT STATUS:</strong>
             {{ strtoupper(auth()->user()->current_status ?? 'N/A') }}          </div>
