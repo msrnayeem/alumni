@@ -30,13 +30,13 @@
       <tr>
         <td style="width: 160px; font-weight: bold;">Student ID:</td>
         <td>
-          <input type="text" name="student_id" value="{{ old('student_id') }}" placeholder="8764168175" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+          <input type="text" name="student_id" value="{{ old('student_id') }}" placeholder="1234567890" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
         </td>
       </tr>
       <tr>
         <td style="font-weight: bold;">Registration Number:</td>
         <td>
-          <input type="text" name="registration_number" value="{{ old('registration_number') }}" placeholder="" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+          <input type="text" placeholder="1234567890" name="registration_number" value="{{ old('registration_number') }}" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
         </td>
       </tr>
       <tr>

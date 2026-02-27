@@ -29,7 +29,7 @@
 <div class="profile-container">
   <div class="profile-header">
     @if($student->profile_photo_path)
-      <img class="photo" src="{{ Storage::url($student->profile_photo_path) }}" alt="Student Photo">
+      <img class="photo" src="{{ asset('storage/' . $student->profile_photo_path) }}" alt="Student Photo">
     @else
       <img class="photo" src="https://ui-avatars.com/api/?name={{ urlencode($student->name) }}&size=140&background=E64A19&color=fff&bold=true&format=svg" alt="Student Photo">
     @endif
@@ -46,7 +46,7 @@
 
   @if($student->signature_photo_path)
     <div class="signature-wrap">
-      <img src="{{ Storage::url($student->signature_photo_path) }}" alt="Signature">
+      <img src="{{ asset('storage/' . $student->signature_photo_path) }}" alt="Signature">
       <div class="signature-caption">SIGNATURE</div>
     </div>
   @endif
