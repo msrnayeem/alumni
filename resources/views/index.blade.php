@@ -16,14 +16,12 @@
     <span style="color: green;">✔</span> Certificate Verification
   </div>
 
-  <!-- Error message (shows only if ?error=1 in URL) -->
-  <div id="error-message">
-    @if(request()->has('error') && request()->get('error') == 1)
-      <div style="padding: 10px; background-color: #f8d7da; color: #721c24; margin-bottom: 15px; border-radius: 4px;">
-        Invalid verification details. Please try again.
-      </div>
-    @endif
-  </div>
+  <!-- Error message -->
+  @if($errors->has('verify'))
+    <div style="padding: 10px; background-color: #f8d7da; color: #721c24; margin: 15px 20px 0; border-radius: 4px;">
+      {{ $errors->first('verify') }}
+    </div>
+  @endif
   
   <!-- Form Content -->
   <form method="post" action="{{ url('verify') }}" style="padding: 20px;">
@@ -32,20 +30,20 @@
       <tr>
         <td style="width: 160px; font-weight: bold;">Student ID:</td>
         <td>
-          <input type="text" name="student_id" placeholder="8764168175" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+          <input type="text" name="student_id" value="{{ old('student_id') }}" placeholder="8764168175" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
         </td>
       </tr>
       <tr>
         <td style="font-weight: bold;">Registration Number:</td>
         <td>
-          <input type="text" name="registration_number" placeholder="" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+          <input type="text" name="registration_number" value="{{ old('registration_number') }}" placeholder="" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
         </td>
       </tr>
       <tr>
         <td style="font-weight: bold;">Date of Birth:</td>
         <td>
           <!-- Text field for datepicker -->
-          <input type="text" name="dob" id="dob" placeholder="DD-MM-YYYY" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+          <input type="text" name="dob" id="dob" value="{{ old('dob') }}" placeholder="DD-MM-YYYY" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
         </td>
       </tr>
       <tr>
