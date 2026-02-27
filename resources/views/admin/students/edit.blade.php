@@ -131,7 +131,7 @@
                 <label>Marital Status</label>
                 <select name="marital_status">
                     <option value="">-- Select --</option>
-                    @foreach(['Single','Married','Divorced','Widowed'] as $ms)
+                    @foreach(['Unmarried','Married','Divorced','Widowed'] as $ms)
                         <option value="{{ $ms }}" {{ old('marital_status', $user->marital_status) == $ms ? 'selected' : '' }}>{{ $ms }}</option>
                     @endforeach
                 </select>

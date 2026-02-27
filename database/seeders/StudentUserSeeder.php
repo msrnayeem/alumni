@@ -34,7 +34,7 @@ class StudentUserSeeder extends Seeder
                 'gender' => 'Male',
                 'blood_group' => 'A+',
                 'nationality' => 'Bangladeshi',
-                'marital_status' => 'Single',
+                'marital_status' => 'Unmarried',
                 'religion' => 'Islam',
                 'nid_passport_no' => '6013435240',
                 'mobile' => '+8801610820531',
