@@ -65,8 +65,8 @@
                 <input type="text" name="enrolment_semester" value="{{ old('enrolment_semester', $user->enrolment_semester) }}">
             </div>
             <div class="form-group">
-                <label>Graduation Year</label>
-                <input type="number" name="graduation_year" value="{{ old('graduation_year', $user->graduation_year) }}">
+                <label>Passing Year</label>
+                <input type="text" name="graduation_year" value="{{ old('graduation_year', $user->graduation_year) }}" placeholder="e.g. Spring 2023">
             </div>
             <div class="form-group">
                 <label>Credit Completed</label>
@@ -82,7 +82,12 @@
             </div>
             <div class="form-group">
                 <label>Current Status</label>
-                <input type="text" name="current_status" value="{{ old('current_status', $user->current_status) }}">
+                <select name="current_status">
+                    <option value="">-- Select --</option>
+                    @foreach(['Graduated','Active','Inactive','Suspended'] as $opt)
+                        <option value="{{ $opt }}" {{ old('current_status', $user->current_status) == $opt ? 'selected' : '' }}>{{ $opt }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label>Certificate Serial</label>
@@ -96,23 +101,49 @@
             </div>
             <div class="form-group">
                 <label>Gender</label>
-                <input type="text" name="gender" value="{{ old('gender', $user->gender) }}">
+                <div style="display:flex;gap:20px;margin-top:6px;">
+                    @foreach(['Male','Female'] as $g)
+                        <label style="font-weight:normal;display:flex;align-items:center;gap:6px;">
+                            <input type="radio" name="gender" value="{{ $g }}" {{ old('gender', $user->gender) == $g ? 'checked' : '' }}> {{ $g }}
+                        </label>
+                    @endforeach
+                </div>
             </div>
             <div class="form-group">
                 <label>Blood Group</label>
-                <input type="text" name="blood_group" value="{{ old('blood_group', $user->blood_group) }}">
+                <select name="blood_group">
+                    <option value="">-- Select --</option>
+                    @foreach(['A+','A-','B+','B-','AB+','AB-','O+','O-'] as $bg)
+                        <option value="{{ $bg }}" {{ old('blood_group', $user->blood_group) == $bg ? 'selected' : '' }}>{{ $bg }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label>Nationality</label>
-                <input type="text" name="nationality" value="{{ old('nationality', $user->nationality) }}">
+                <select name="nationality">
+                    <option value="">-- Select --</option>
+                    @foreach(['Bangladeshi','Indian','Pakistani','Others'] as $nat)
+                        <option value="{{ $nat }}" {{ old('nationality', $user->nationality) == $nat ? 'selected' : '' }}>{{ $nat }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label>Marital Status</label>
-                <input type="text" name="marital_status" value="{{ old('marital_status', $user->marital_status) }}">
+                <select name="marital_status">
+                    <option value="">-- Select --</option>
+                    @foreach(['Single','Married','Divorced','Widowed'] as $ms)
+                        <option value="{{ $ms }}" {{ old('marital_status', $user->marital_status) == $ms ? 'selected' : '' }}>{{ $ms }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label>Religion</label>
-                <input type="text" name="religion" value="{{ old('religion', $user->religion) }}">
+                <select name="religion">
+                    <option value="">-- Select --</option>
+                    @foreach(['Islam','Christianity','Hinduism','Buddhism','Others'] as $rel)
+                        <option value="{{ $rel }}" {{ old('religion', $user->religion) == $rel ? 'selected' : '' }}>{{ $rel }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label>NID / Passport No.</label>

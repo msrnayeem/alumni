@@ -24,7 +24,7 @@ class StudentUserSeeder extends Seeder
                 'program' => 'BACHELOR OF BUSINESS ADMINISTRATION (BBA)',
                 'major_1' => 'ACCOUNTING INFORMATION SYSTEM',
                 'enrolment_semester' => 'SPRING 2019',
-                'graduation_year' => 2023,
+                'graduation_year' => 'SPRING 2023',
                 'credit_completed' => '126',
                 'cgpa' => '3.50',
                 'result_publication_date' => '21ST MARCH 2023',

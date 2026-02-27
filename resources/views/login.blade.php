@@ -3,6 +3,14 @@
 
 @section('content')
 
+<!-- Marquee notice -->
+<div class="marquee-container">
+  <div class="marquee">
+    This is the only official website authorized by South Asia University Bangladesh for online certificate verification.
+  </div>
+</div>
+
+
 <div style="max-width: 600px; margin: 40px auto; font-family: Arial, sans-serif; border: 1px solid #ddd; border-radius: 4px;">
   <div style="background-color: #f1f3f5; padding: 12px 20px; border-bottom: 1px solid #ccc; font-weight: bold; font-size: 16px;">
     Graduate Login

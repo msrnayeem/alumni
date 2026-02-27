@@ -1,6 +1,12 @@
 @extends('layouts.master')
 
 @section('content')
+<!-- Marquee notice -->
+<div class="marquee-container">
+  <div class="marquee">
+    This is the only official website authorized by South Asia University Bangladesh for online certificate verification.
+  </div>
+</div>
 
 <style>
   .profile-container { max-width: 1000px; margin: 30px auto; font-family: Arial, sans-serif; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
