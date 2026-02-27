@@ -76,10 +76,6 @@
       @endguest
 
       @auth
-        <a href="{{ url('profile') }}"
-           class="usa-nav-link" style="background: transparent; border: none; border-bottom: 3px solid red; color: red; font-weight: 800; border-radius: 0; padding-bottom: 2px; margin-right: 15px;">
-          <i class="fa fa-id-badge" style="margin-right: 5px;"></i> Profile
-        </a>
         
         <form action="{{ route('logout') }}" method="POST" style="display:inline;">
             @csrf
